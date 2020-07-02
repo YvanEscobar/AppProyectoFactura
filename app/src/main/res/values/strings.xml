@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">App Proyecto Factura</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">PROYECTO CRUD FACTURA</string>
+    <string name="nav_header_subtitle">y@hotmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Listado Facturas</string>
+    <string name="menu_Escaneo">Escaneo</string>
+    <string name="menu_LecturaQR">Lectura QR</string>
+    <string name="menu_RegistroQR">Registro QR</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_home_detail">Detalle Facturas</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
