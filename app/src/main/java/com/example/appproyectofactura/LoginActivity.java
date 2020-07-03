@@ -1,12 +1,13 @@
 package com.example.appproyectofactura;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,12 +17,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.crypto.Cipher;
-import javax.crypto.spec.SecretKeySpec;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -41,7 +38,6 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //textoPassword = encriptar(edtUsuario.getText().toString(), edtPassword.getText().toString());
                 validarUsuario("https://proyectoinformatico03.000webhostapp.com/validar_usu.php");
             }
         });
@@ -74,23 +70,6 @@ public class LoginActivity extends AppCompatActivity {
         };
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
-    }
-
-    private String encriptar(String datos, String password) throws Exception{
-        SecretKeySpec secretKey = generateKey(password);
-        Cipher cipher = Cipher.getInstance("AES");
-        cipher.init(Cipher.ENCRYPT_MODE, secretKey);
-        byte[] datosEncriptadosBytes = cipher.doFinal(datos.getBytes());
-        String datosEncriptadosString = Base64.encodeToString(datosEncriptadosBytes, Base64.DEFAULT);
-        return datosEncriptadosString;
-    }
-
-    private SecretKeySpec generateKey(String password) throws Exception {
-        MessageDigest sha = MessageDigest.getInstance("SHA-256");
-        byte[] key = password.getBytes("UTF-8");
-        key = sha.digest(key);
-        SecretKeySpec secretKey = new SecretKeySpec(key, "AES");
-        return secretKey;
     }
 }
 
