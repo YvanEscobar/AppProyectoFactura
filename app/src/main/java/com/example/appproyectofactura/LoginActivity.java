@@ -52,6 +52,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 if(!response.isEmpty()){
+                    // Guarda usuario logueado
+                    AppProyectoFactura datosApp = (AppProyectoFactura) getApplication();
+                    datosApp.setUsuario(edtUsuario.getText().toString());
                     Intent intent= new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                 }else{
