@@ -132,7 +132,7 @@ public class HomeFragmentDetail extends Fragment {
                 //              if(!response.isEmpty()){
                 //resultRegistro.setText("REGISTRADO");
                 //                  Toast.makeText(MainActivity.this, "REGISTRADO", Toast.LENGTH_SHORT).show();
-                
+
             }
         }, new Response.ErrorListener() {
             @Override
