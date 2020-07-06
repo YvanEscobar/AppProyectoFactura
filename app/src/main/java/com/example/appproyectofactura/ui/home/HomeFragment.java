@@ -24,7 +24,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.appproyectofactura.AppProyectoFactura;
 import com.example.appproyectofactura.R;
 
 import org.json.JSONArray;
@@ -158,9 +157,6 @@ public class HomeFragment extends Fragment {
                                         //   fragmentManager.beginTransaction().replace(R.id.nav_host_fragment,homeFragmentDetail).commit();
 
                                         //    Toast.makeText(getActivity().getApplicationContext(), "Fila Número: " + id_fact.getText().toString()+" , "+ruc_fact.getText().toString(), Toast.LENGTH_LONG).show();
-                                        // Leer usuario logueado
-                                        AppProyectoFactura datosApp = (AppProyectoFactura) getActivity().getApplication();
-                                        Toast.makeText(getActivity().getApplicationContext(), "Usuario actual: " + datosApp.getUsuario(), Toast.LENGTH_LONG).show();
                                     }
                                 });
                             }

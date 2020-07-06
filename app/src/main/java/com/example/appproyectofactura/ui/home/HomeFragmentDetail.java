@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.appproyectofactura.AppProyectoFactura;
 import com.example.appproyectofactura.R;
 
 import org.json.JSONArray;
@@ -29,6 +30,7 @@ import java.util.Map;
 public class HomeFragmentDetail extends Fragment {
     TextView textoID, textoRUC, textoFactura, textoIGV, textoTotal, textoEstado, textoFEmision, textoFRegistro;
     RequestQueue requestQueue;
+    String usuarioLogin;
 
     public HomeFragmentDetail() {
         // Required empty public constructor
@@ -69,6 +71,11 @@ public class HomeFragmentDetail extends Fragment {
         textoFEmision = view.findViewById(R.id.TextoFEmision);
         textoFRegistro = view.findViewById(R.id.TextoFRegistro);
         textoEstado = view.findViewById(R.id.TextoEstado);
+
+        // Leer usuario logueado
+        AppProyectoFactura datosApp = (AppProyectoFactura) getActivity().getApplication();
+        usuarioLogin = datosApp.getUsuario();
+
 
         documentValidation("https://proyectoinformatico03.000webhostapp.com/validacion.php?nro_ruc=" + textoRUC.getText() + "&nro_doc=" + textoFactura.getText() + "");
                 return view;
@@ -145,7 +152,7 @@ public class HomeFragmentDetail extends Fragment {
                 Map<String, String> parametros = new HashMap<String, String>();
                 parametros.put("nro_ruc", textoRUC.getText().toString());
                 parametros.put("nro_doc", textoFactura.getText().toString());
-                parametros.put("usuario", textoEstado.getText().toString());
+                parametros.put("usuario", usuarioLogin);
                 parametros.put("estado", textoEstado.getText().toString());
                 return parametros;
             }
