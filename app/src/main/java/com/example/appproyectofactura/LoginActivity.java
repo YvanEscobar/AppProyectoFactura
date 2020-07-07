@@ -4,7 +4,6 @@ import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,12 +25,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 
-import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Map;
-
-import javax.crypto.Cipher;
-import javax.crypto.spec.SecretKeySpec;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -130,21 +125,5 @@ public class LoginActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-    private String encriptar(String datos, String password) throws Exception{
-        SecretKeySpec secretKey = generateKey(password);
-        Cipher cipher = Cipher.getInstance("AES");
-        cipher.init(Cipher.ENCRYPT_MODE, secretKey);
-        byte[] datosEncriptadosBytes = cipher.doFinal(datos.getBytes());
-        String datosEncriptadosString = Base64.encodeToString(datosEncriptadosBytes, Base64.DEFAULT);
-        return datosEncriptadosString;
-    }
-
-    private SecretKeySpec generateKey(String password) throws Exception {
-        MessageDigest sha = MessageDigest.getInstance("SHA-256");
-        byte[] key = password.getBytes("UTF-8");
-        key = sha.digest(key);
-        SecretKeySpec secretKey = new SecretKeySpec(key, "AES");
-        return secretKey;
-    }
 }
 
