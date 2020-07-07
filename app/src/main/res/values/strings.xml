@@ -14,6 +14,10 @@
     <string name="menu_share">Share</string>
     <string name="menu_home_detail">Detalle Facturas</string>
 
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_factura_default</string>
+    <string name="default_notification_channel_name" translatable="true">Notificaciones</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

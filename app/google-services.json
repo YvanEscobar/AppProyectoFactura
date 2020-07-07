@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "388895160122",
+    "firebase_url": "https://proyectoappocr.firebaseio.com",
+    "project_id": "proyectoappocr",
+    "storage_bucket": "proyectoappocr.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:388895160122:android:5f331f698e56053ddf0203",
+        "android_client_info": {
+          "package_name": "com.example.appproyectofactura"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "388895160122-tblkbgg0gligg764nnu7mdpc6jhej6hv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLNDMqMIp8lLdrhlSKB8ADztpbrfPfuA8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "388895160122-tblkbgg0gligg764nnu7mdpc6jhej6hv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
