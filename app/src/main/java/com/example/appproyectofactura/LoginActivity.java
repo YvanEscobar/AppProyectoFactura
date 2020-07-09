@@ -25,6 +25,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -97,9 +99,20 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 if(!response.isEmpty()){
+                    String nombreCompleto = null;
+                    String correo = null;
+                    try {
+                        JSONObject res = new JSONObject(response);
+                        nombreCompleto = res.getString("nombre_completo");
+                        correo = res.getString("correo");
+                    } catch (Exception ex) {
+                        Log.e(TAG, ex.getMessage());
+                    }
                     // Guarda usuario logueado
                     AppProyectoFactura datosApp = (AppProyectoFactura) getApplication();
                     datosApp.setUsuario(edtUsuario.getText().toString());
+                    datosApp.setNombreCompleto(nombreCompleto);
+                    datosApp.setCorreo(correo);
                     Intent intent= new Intent(getApplicationContext(),MainActivity.class);
                     startActivity(intent);
                 }else{
